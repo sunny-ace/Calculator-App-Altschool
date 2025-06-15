@@ -31,7 +31,13 @@ function handleInput(value) {
         } catch {
             currentInput = 'Error';
         }
-    } else {
+
+     } else if (value === '⬅') {
+            currentInput = currentInput === '0' || currentInput === 'Error' ? '0' :
+            currentInput.length === 1 ? '0' : currentInput.slice(0, -1);
+        }
+
+     else {
         if (currentInput === '0' || currentInput === 'Error') {
             currentInput = value;
         } else {
